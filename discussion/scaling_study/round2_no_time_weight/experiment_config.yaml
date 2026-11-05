@@ -1,0 +1,7 @@
+# Reuse every round-one setting except the temporal loss weights.
+base_config: ../experiment_config.yaml
+models: [ELS-2K, ELS-4K, ELS-16K, ELS-32K]
+time_weighting: none
+time_weight_value: 1.0
+results: discussion/scaling_study/round2_no_time_weight/results
+round_one_results: discussion/scaling_study/results/20261019_122955_429296_seed42

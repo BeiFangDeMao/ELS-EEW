@@ -1,0 +1,17 @@
+# Convenience dependencies for the core PyTorch experiments and plotting.
+# Not a lockfile; consult per-experiment requirements and upstream licenses.
+torch
+numpy
+scipy
+pandas
+h5py
+scikit-learn
+matplotlib
+PyYAML
+tqdm
+pyarrow
+psutil
+Pillow
+geographiclib
+openpyxl
+# Historical/third-party experiments can require additional dependencies.

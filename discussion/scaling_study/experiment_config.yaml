@@ -1,0 +1,37 @@
+# Paths are relative to the Light_model workspace, not to the current shell.
+project: els_eew
+dataset: dataset/dataseth5/J_K_KIKnet_2976_Causal_100Hz_20261012_153132_099924/J_K_KIKnet_2976_Causal_100Hz.h5
+reference_experiment: els_eew/outputs/experiment_20261012_223631_490021/CompactGRU_seed42
+reference_checkpoint: els_eew/outputs/experiment_20261012_223631_490021/CompactGRU_seed42/checkpoint_CompactGRU_20261012_235806/best_CompactGRU_20261012_235806.pth
+reference_sha256: c20841d6c4d76776dae64b83847cb5e788d287f59f52adab592f183639557f80
+label_cache: plotting/Fig01_Data_Distribution/labels.npz
+data_provenance: plotting/Fig01_Data_Distribution/data_provenance.json
+results: discussion/scaling_study/results
+retrain_8k: false
+allow_reference_mismatch: false
+require_cuda_for_training: true
+seed: 42
+batch_size: 512
+epochs: 300
+patience: 20
+grad_clip: 0.8
+sequence_length: 2976
+sampling_rate: 100
+chunk_size: 32
+exclude_200hz: true
+h5_read_processes: 16
+expected_split_counts: {train: 605166, validation: 84564, test: 51772}
+weight_decay: 0.00001
+backbone_base_lr: 0.0002
+backbone_max_lr: 0.0006
+head_base_lr: 0.001
+head_max_lr: 0.003
+cycle_up_epochs: 10
+cycle_down_epochs: 10
+early_stop_epsilon: 0.000001
+report_times: [3, 5, 10, 20, 29.76]
+# Candidate recommendations use validation MAEs and these budgets ONLY.
+budgets:
+  - {name: small, max_parameters: 4500, max_macs: 150000, max_state_kib: 2}
+  - {name: reference, max_parameters: 9000, max_macs: 300000, max_state_kib: 3}
+  - {name: larger, max_parameters: 34000, max_macs: 1200000, max_state_kib: 8}

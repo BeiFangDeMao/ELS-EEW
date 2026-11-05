@@ -1,0 +1,94 @@
+﻿{
+    "source_url":  "https://github.com/PabloELara/E3WS",
+    "commit":  "cf927a5ea3f17d55d36997d6d81223e48dbfec76",
+    "retrieved_date":  "2026-10-22",
+    "downloaded_files":  [
+                             {
+                                 "path":  "LICENSE",
+                                 "github_blob_sha":  "4ea99c213c5c0c005ae4e80df8e52169d06896ec",
+                                 "sha256":  "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+                             },
+                             {
+                                 "path":  "README.md",
+                                 "github_blob_sha":  "613b9a6e1998b38d5a755a9778e17ab3b92afa28",
+                                 "sha256":  "214c2ea7a1243f8717bbb58cb32817900697f6398e353c7b291894c9ee0eb19a"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/atr_eq/README.md",
+                                 "github_blob_sha":  "d18075f87ee7b9849dfc52df9630db148038ee94",
+                                 "sha256":  "56101cbf56585d51e2f1dae9b3e69ea13a12b950a26239311f191818269c9871"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/atr_noise/README.md",
+                                 "github_blob_sha":  "2b259692a689013ed5962f204742101eaababbea",
+                                 "sha256":  "1f8769184dd7598d5eb4765f867f78fc8dadd13147546d47857268a05f2bf749"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/functions/pb_functions.py",
+                                 "github_blob_sha":  "aef1c9ac6ddc5363e04ed8bca74c41b611232263",
+                                 "sha256":  "56aa725685dcc7783d43c03ced63f50e1b28c3b7afa46642bae6162f6120c796"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/functions/pb_utils_v16.py",
+                                 "github_blob_sha":  "7708edbe90d3b1785619686caa6d93aa0fb3c58f",
+                                 "sha256":  "93bc914d9589acf09a5a12b80c28b375adbb5f33cbc1b8411e8d9a66f5a2adac"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/functions/pick_func_v16.py",
+                                 "github_blob_sha":  "3baaf97a5b19e7281cebf73e258a1eac6b904993",
+                                 "sha256":  "7b2bf6813e65a7d4800b2b55aa1bb4503adc2837607583af949c9f096fe7af8a"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/functions/utils.py",
+                                 "github_blob_sha":  "3c8b4d6a5a56499ff393be14143470666fd50d7b",
+                                 "sha256":  "7df67426d2405421e2ea710c482b3c191bcc42b84b99c220ff597e82a1df84bc"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/gen_catag.py",
+                                 "github_blob_sha":  "24dcc348b1c50715e82a9d7782929ab5e86ba99f",
+                                 "sha256":  "c2774cffb39ef1d1c191c99396161a43e8affaaea8835b220e9eef6aa114fa75"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/pb_FV_noise.py",
+                                 "github_blob_sha":  "1e1ffb55ca4e7c3e9cb28de53cd1104dda504921",
+                                 "sha256":  "c9e5499dedb9cda8a6dc2c781bd861271655ecca0438f4d7d2027fafe069e615"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/pb_save_DET_model.py",
+                                 "github_blob_sha":  "7c3072b7289ac0823ad9ffd8932a54c464022008",
+                                 "sha256":  "05ef509a0f5422498dbb86079cd02450e62e7d23b484164da827926356957a45"
+                             },
+                             {
+                                 "path":  "models/DET/build_DET/saved_models/README.md",
+                                 "github_blob_sha":  "c5606f1bbc22a9990f283914c8aecb043f83c83d",
+                                 "sha256":  "096c7ec7d280ce439f8835a06214728563094458c0e0f796c1e2e9c86201759f"
+                             },
+                             {
+                                 "path":  "real_time/E3WS_rt.py",
+                                 "github_blob_sha":  "db237140f2a9bf86d68729e6c9eab6cc640391f8",
+                                 "sha256":  "b441c06a85cffd0963437e34d6966d0535d94ebd933064198d98edf1c61d10e9"
+                             },
+                             {
+                                 "path":  "real_time/functions/pb_functions.py",
+                                 "github_blob_sha":  "aef1c9ac6ddc5363e04ed8bca74c41b611232263",
+                                 "sha256":  "56aa725685dcc7783d43c03ced63f50e1b28c3b7afa46642bae6162f6120c796"
+                             },
+                             {
+                                 "path":  "real_time/functions/pb_utils_v16.py",
+                                 "github_blob_sha":  "7708edbe90d3b1785619686caa6d93aa0fb3c58f",
+                                 "sha256":  "93bc914d9589acf09a5a12b80c28b375adbb5f33cbc1b8411e8d9a66f5a2adac"
+                             },
+                             {
+                                 "path":  "real_time/functions/pick_func_v16.py",
+                                 "github_blob_sha":  "3baaf97a5b19e7281cebf73e258a1eac6b904993",
+                                 "sha256":  "7b2bf6813e65a7d4800b2b55aa1bb4503adc2837607583af949c9f096fe7af8a"
+                             },
+                             {
+                                 "path":  "real_time/functions/utils.py",
+                                 "github_blob_sha":  "3c8b4d6a5a56499ff393be14143470666fd50d7b",
+                                 "sha256":  "7df67426d2405421e2ea710c482b3c191bcc42b84b99c220ff597e82a1df84bc"
+                             }
+                         ],
+    "excluded":  "Pretrained joblib weights, example waveform data, figures and other non-source assets; full tree retained in downloads/E3WS-tree.json",
+    "validation":  "All downloaded source files match GitHub blob hashes; no execution or training"
+}

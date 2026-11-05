@@ -1,0 +1,352 @@
+﻿{
+    "source_url":  "https://github.com/senli1073/SeisT",
+    "archive_url":  "https://codeload.github.com/senli1073/SeisT/zip/refs/heads/main",
+    "retrieved_date":  "2026-10-22",
+    "github_tree_snapshot_sha":  "3a1ebdd8f923682a9641d4f88817c3cc0659408f",
+    "all_files_match_tree":  true,
+    "archive_sha256":  "3c1a2061059c4c4f653950d9846e36c992fa82399f75dda99992b8a9cab79ead",
+    "models":  {
+                   "MagNet":  "PyTorch reimplementation by SeisT authors",
+                   "E3WS":  "Included as original feature-based ensemble method; source in upstream/E3WS, provenance in E3WS_source_manifest.json; source-parameter training scripts not present in upstream snapshot",
+                   "SeisT":  "official PyTorch implementation"
+               },
+    "validation":  "Source integrity and static inspection only; no dependencies installed or training executed",
+    "files":  [
+                  {
+                      "path":  ".gitignore",
+                      "sha256":  "ba10c3ccb4e232323718771117f91af872d0aa42574931d16098681ab7c3b9a4",
+                      "github_blob_sha":  "2d97991d7edb176fa2b5829b9f3ceb6405bdb108",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "LICENSE",
+                      "sha256":  "26b7420eb5bf4a029209d4848230867f060ff1e1e3cfdbaeb9e0e5581673b195",
+                      "github_blob_sha":  "d66e2974f810cd183d0ae95b703e114152221ec7",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "README.md",
+                      "sha256":  "01b3487ce556cd3ab0d5f1af64eb542f73e9d844af2968cf0e9fdff314105abe",
+                      "github_blob_sha":  "ac1201161fdf6f42ff50d7779ce72e522c0b1e99",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "config.py",
+                      "sha256":  "e8af82adf64452a8e4fc5aad1ad859f8a73d9cfa8a8beb6b8d16295c951276d6",
+                      "github_blob_sha":  "46f8b574426ad10d4e803de86070b3d697a36f70",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "datasets/__init__.py",
+                      "sha256":  "be728ee156ce26336cfb822027aa887131248226b12de907e59b50e187991ace",
+                      "github_blob_sha":  "503cb40d3944471544a09ced111045d802bc628d",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "datasets/_factory.py",
+                      "sha256":  "5b8214785d2470aee4a2ec1cdb5c7d809a574da25f5a41d9ee8acbd20af85c83",
+                      "github_blob_sha":  "43e80387a411f31435efa00d574fc254e882aac6",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "datasets/base.py",
+                      "sha256":  "b5994ce87153f129cd19888ad403c1add9bc71f81859cf50e70b49d8079321d0",
+                      "github_blob_sha":  "234526fc42fe86497c08c8eb04296acda442d993",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "datasets/diting.py",
+                      "sha256":  "1f7bd9ffa1cdd7342eb05a667d53e69516cd70ac2151114807c047964c0845cd",
+                      "github_blob_sha":  "b768728c6f232997f99c104fdd9a1c98e7517989",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "datasets/pnw.py",
+                      "sha256":  "447a3ef6a58938633ffd59253befe2b20e58668cf62ac5279bd93e9ef767aab0",
+                      "github_blob_sha":  "171b0431d32bf3126f68efbf498daf663b540036",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "datasets/sos.py",
+                      "sha256":  "bdd2b43497d8d1203e59f313bce1c25cf13866ea47b3f195edd4c8581039c617",
+                      "github_blob_sha":  "a4415de0803c67045b9836f22c360d05aad02bba",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "demo_predict.py",
+                      "sha256":  "e53c29da22c521f762c821861b8da5972cf70b81d2a512c32561b13b4dc1128c",
+                      "github_blob_sha":  "6e2edc5f4727264580d3e213fb3b34e8d24cb4db",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "images/SeisT_Architecture.png",
+                      "sha256":  "04727806cdda83c3916debfc7e4389bd9fb6918e9ffd48ffc6a9aabbea500406",
+                      "github_blob_sha":  "727007d507686cfc8866f677b6032fe51706247b",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "main.py",
+                      "sha256":  "cf76c3222ef8bf77b5f86533065a43f77d1c51d766769ffcb930d51726bb41ec",
+                      "github_blob_sha":  "26669db7dd468f8d89b483703987828f8a744de1",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/__init__.py",
+                      "sha256":  "77783ab992cd9fb46dde9503c4f32eaf15fcf4eda2ac01a15597b9f0e2ed13aa",
+                      "github_blob_sha":  "2c79ca22599b35b1fc7606037c869c62470d6fbf",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/_factory.py",
+                      "sha256":  "617316b392a91c94d68382deee88bc76e600c4849ad3571fc8db82025eefa4e5",
+                      "github_blob_sha":  "f346d42f2fdcbe33e05aa9923792aac82e547e5a",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/baz_network.py",
+                      "sha256":  "ba5987890381301deb860ea450fae6b6edefac54e8889d7935634a79239de159",
+                      "github_blob_sha":  "2827dc06fd7f1ebf0c32e74394164b0e1f9cd093",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/distpt_network.py",
+                      "sha256":  "910e1149d09fb06fb31b811829b1039f2e751cc93f8e3f5ea08bcdd11aba9198",
+                      "github_blob_sha":  "5d8843fb63ab6f01ed635adc84abe09897185f9d",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/ditingmotion.py",
+                      "sha256":  "83393c3b41f40ab6fe4fe41ea5b722def13e7067c82502a29097ca77739d9424",
+                      "github_blob_sha":  "3f686acc5382d37c658a3b582922823e13bf0ce6",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/eqtransformer.py",
+                      "sha256":  "c7269bba943b245f13861efe220f1a301ac2c837fdb76d75698d992fa80cf533",
+                      "github_blob_sha":  "093faad0b4d3d0c72978dfffa221b3473568a3f8",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/loss.py",
+                      "sha256":  "ed7bb471f6ca4032fc060b01aa25ebc634c286535d3c884ac95bf91e78cbf228",
+                      "github_blob_sha":  "0e90cdde2a33555de6144b9be2e96086d4dcd0c7",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/magnet.py",
+                      "sha256":  "1e7b4bc0347e2e00d229cf4a553101e7e45621ce4238cd29441e1709839c177f",
+                      "github_blob_sha":  "9030123830967eb7cc0c93f0ed22beefc6842827",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/phasenet.py",
+                      "sha256":  "25fb6aadfc693663df752778ff08c070bfac00deeaf34f985abc758681c541a7",
+                      "github_blob_sha":  "26aeb1cce7ed6346a67fd29e17b268448d500c13",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "models/seist.py",
+                      "sha256":  "2990bae9a997ea497ecb53adc598379922485db328f785c06cd77f620458d301",
+                      "github_blob_sha":  "5c7f58077d8609e4b688d02c9cdd65361005242b",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_l_baz_diting.pth",
+                      "sha256":  "5a7f5893e82ce8dc1398bc8d94910aa953da0e0845eba6f84e0e09a846e2509a",
+                      "github_blob_sha":  "06508c5390ea41a0340ad9fc767a8cd8a991bfca",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_l_dis_diting.pth",
+                      "sha256":  "f292454209f8a576fcaaa978dc1a380c8115dee5a6dc3f17615526cc31a51c0c",
+                      "github_blob_sha":  "2874f0cec9459db39857ae1c39347bd4f8769f3b",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_l_dpk_diting.pth",
+                      "sha256":  "6d6ab4a493a76c4988de0fa0a5c032d8c5ab6dd92fd5fb76481e7e876301e187",
+                      "github_blob_sha":  "b9f5c4f4a895aea7df3adf06775807474c8a7fbb",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_l_emg_diting.pth",
+                      "sha256":  "0bb456c454fb0fdac7f2eb664c065c1082a27fd924bf96cc7a3ea3d08b864c80",
+                      "github_blob_sha":  "a87b9cd18de5496dfc274205ab7d3a62011d7d8d",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_l_emg_pnw.pth",
+                      "sha256":  "5210f687953c81f69d04362256ea7c239974c59aef6287712fc49da34363d9a0",
+                      "github_blob_sha":  "60d40d3bb7b9c869792458fd60de1b9865fbc369",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_l_pmp_diting.pth",
+                      "sha256":  "24466944d842295577711897e5df4ea67c745ba6f5518c284c82841ef03cdaec",
+                      "github_blob_sha":  "3676228be541ab9272272b7594c7a54033fd750b",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_m_baz_diting.pth",
+                      "sha256":  "9165b29ceb3744de189d8229bc2eccb581773df01401f136420fc2ea38100aaa",
+                      "github_blob_sha":  "adc8c8c991e4d3108fa68f79aefd148e9c643f23",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_m_dis_diting.pth",
+                      "sha256":  "bd1627e98ee0a8e37a7df4c0174af641fb960b1bbf16c47a3480b8794a4a39ca",
+                      "github_blob_sha":  "ca87d8fa335a7a6d16b0039492a72ef17b5894fb",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_m_dpk_diting.pth",
+                      "sha256":  "698c8500f5d047e2a28fe75e838db499d315c23550bd529efbe4d14e0a96ab58",
+                      "github_blob_sha":  "d62fd3522aa54354c5f3856b889c33c72c7fa3e0",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_m_emg_diting.pth",
+                      "sha256":  "014cab39d562c48305c07ac86fccc0bafe8d6ebf19eda048057a07cc20ca8dae",
+                      "github_blob_sha":  "99025523ef12ff20e1dc103fe4b807bc3a16fe80",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_m_emg_pnw.pth",
+                      "sha256":  "8b8d996f02131fff55dd54668dbf20f8288f8382d222db46a0b93e4fd51c98d0",
+                      "github_blob_sha":  "679585bd567c18ff7a5de96deb77640d800d5433",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_m_pmp_diting.pth",
+                      "sha256":  "03ce61a610550d7bcd41d0255371efad3a759d4e8f5733b3f1f9ded4caf43fc8",
+                      "github_blob_sha":  "0be6e673c028cfcf1129cb948fe41e142fb76a0a",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_s_baz_diting.pth",
+                      "sha256":  "3b5b26410890aa31445df3e45c30074e43c2562cb76f7313da8f088bfbfffaf9",
+                      "github_blob_sha":  "ac9343c98e758a22ce6db106604832356b4e57ec",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_s_dis_diting.pth",
+                      "sha256":  "28004cede1f275326f270ba24019c02c5bdc68235ed037113158000d5b1d1cab",
+                      "github_blob_sha":  "229e6866b7273180137fd415a1310d6f6c67b0b4",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_s_dpk_diting.pth",
+                      "sha256":  "c3e6fbb357e84f3466b7774cde69e871a1edf32ae5c851995dc3278723f65e52",
+                      "github_blob_sha":  "fc273e211c0dc23f921316c75bbb14eb2ec2781c",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_s_emg_diting.pth",
+                      "sha256":  "86a39b5d4328d92305684fc6aa0f51816d9d18969de906988336b24e9568628a",
+                      "github_blob_sha":  "b462ae60d9cf4e2326f6a073c8e1bd2ec4089c18",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_s_emg_pnw.pth",
+                      "sha256":  "c9acc7745f8af9a1663ab340b770af73f8d81a11a06304123e13d191372080f4",
+                      "github_blob_sha":  "51ecffdc0cf9d0884193e7e16951f09846adcfcc",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "pretrained/seist_s_pmp_diting.pth",
+                      "sha256":  "afa8ac49fb1b5b56eb268764980e3f0654d16feb732576fadd8d3abd0283a617",
+                      "github_blob_sha":  "b4234f94aaf286f3f37a1879909546b87503698f",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "requirements.txt",
+                      "sha256":  "ce52eb6d3dac92a9e25e0e0d73cbaf8f2bd2142ca5a5106600a383d7446d90b5",
+                      "github_blob_sha":  "516eab3901f3b167902f8b2620fbf272f6ddd6ea",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "start.sh",
+                      "sha256":  "076a69ec154ad9ffdca25c3d4cda29d027c60efd4753aa9fcd13f93e732b6f84",
+                      "github_blob_sha":  "55c24bb958b703bd5b56283ca18f07776019a76b",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "start_distributed.sh",
+                      "sha256":  "f46ac7ab9893629305b9ac98f71bbed57e3f77d25f68cd0472c79b78bb0d02ed",
+                      "github_blob_sha":  "e4f65c31535e06cb58a38491d29285647a9b6781",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "training/__init__.py",
+                      "sha256":  "e674615c8ba2131ea7a7d36ce00eb0f4c4d14808ac99ab289f25afdac6b1fcd2",
+                      "github_blob_sha":  "f54a905e55bb7e81c1d80282888e4f558282ba84",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "training/postprocess.py",
+                      "sha256":  "2d2e136fe58ce7e3655fa77720b881209b0167b697ce7ed4b4569ac971d4d69e",
+                      "github_blob_sha":  "ddbdf235926ec991574613fd40799165d50afc23",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "training/preprocess.py",
+                      "sha256":  "167d1a9cb7065d7f5098e68725573593ca36be1f15a2a81ecd055e7e84959b96",
+                      "github_blob_sha":  "2427a6a011d091a11dcea2b54e44930d5414dd5f",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "training/test.py",
+                      "sha256":  "161dd30a95e56c2c5839622d46652e66af42ecbc9fad4785edc724bee8f8c77a",
+                      "github_blob_sha":  "5790f5e6b72f8c188e0873744a80d27b3d694c31",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "training/train.py",
+                      "sha256":  "0b850d3c36c7eed12e4a4ba0ada5a0689bc668c37f5dbc02494e3f9d4030853b",
+                      "github_blob_sha":  "fafbef5bb9cc996f38fb40b0802d394ccc4b4255",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "training/validate.py",
+                      "sha256":  "a301a885479f9f27e3bbe84f996d8c8dbf2f4ed74a3800ac598c539e99ef21db",
+                      "github_blob_sha":  "65dd41169939a361e3347f521851ec1d056dcf8c",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "utils/__init__.py",
+                      "sha256":  "42cde3f5ebb067210f9ecc000a4851262af3fe41f8691571b857e4c99a56e4b8",
+                      "github_blob_sha":  "a12540d0c077c46462327a9069270646654eec2d",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "utils/logger.py",
+                      "sha256":  "08ca6e6fa8f7d07e19b379265f7707d2f24ea9a3d2b1962883a712cfcec59484",
+                      "github_blob_sha":  "b93f35fe6733626edb9db4c734bfc1094f216278",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "utils/meters.py",
+                      "sha256":  "fcc9e4539e22879a7c8ced81aec8140da2658ec442cface88cad6d108570402b",
+                      "github_blob_sha":  "52b0aa9079ee07577127eebad792273ca9de3a9b",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "utils/metrics.py",
+                      "sha256":  "9ee3af4b74d927d565e1fbcecb12c07d5f96d6995ee60816ce5bbbb0e2501060",
+                      "github_blob_sha":  "575707ef7d36ee83b1c46d990ea860800092468c",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "utils/misc.py",
+                      "sha256":  "ab3573f74b044480811196b94ec1e85564f33678e0f11b3a96b98d72d91fbaf9",
+                      "github_blob_sha":  "93827d824ecb4059a4a3614348285178fa9ae4b7",
+                      "matches_github_tree":  true
+                  },
+                  {
+                      "path":  "utils/visualization.py",
+                      "sha256":  "f52f16007a5d3d3bbe128f1f288fa5944bb81e744eb4fc44a2fdb24a40118199",
+                      "github_blob_sha":  "5702bb76330859bddf1d7c049c888a9679dc9f01",
+                      "matches_github_tree":  true
+                  }
+              ]
+}

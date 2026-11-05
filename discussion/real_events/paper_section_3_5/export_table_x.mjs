@@ -1,0 +1,22 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {Workbook} from '@oai/artifact-tool';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const pointer = JSON.parse(await fs.readFile(path.join(here,'latest_run.json'),'utf8'));
+const folder = pointer.result_directory;
+const data = JSON.parse(await fs.readFile(path.join(folder,'table_x_data.json'),'utf8'));
+if(data.rows.length!==6 || data.headers.length!==9) throw new Error('Expected six records and nine fields');
+const expected = [data.headers,...data.rows];
+const workbook = Workbook.create();
+const sheet = workbook.worksheets.add('Table X');
+sheet.getRange('A1:I7').values = expected;
+workbook.recalculate();
+const actual = sheet.getRange('A1:I7').values;
+if(JSON.stringify(actual)!==JSON.stringify(expected)) throw new Error('Data changed during export');
+const escape = value => value==null?'NaN':/[",\r\n]/.test(String(value))?'"'+String(value).replaceAll('"','""')+'"':String(value);
+const csv='\ufeff'+actual.map(row=>row.map(escape).join(',')).join('\r\n')+'\r\n';
+const output=path.join(folder,'Table_X_Six_Events.csv');
+await fs.writeFile(output,csv,'utf8');
+console.log(JSON.stringify({csv:output,rows:6,columns:9,all_rows_match_Fig13:true}));

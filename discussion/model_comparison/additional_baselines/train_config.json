@@ -1,0 +1,16 @@
+{
+  "dataset_dir": "data/SeisT_MagNet_288_Causal_20261022_204352_165628",
+  "models": ["baz_network"],
+  "seed": 42,
+  "device": "cuda:0",
+  "batch_size": 512,
+  "workers": 4,
+  "h5_read_processes": 16,
+  "cpu_threads": 4,
+  "epochs": 300,
+  "patience": 20,
+  "min_delta": 0.000001,
+  "learning_rate": 0.001,
+  "weight_decay": 0.00001,
+  "grad_clip": 0.8
+}

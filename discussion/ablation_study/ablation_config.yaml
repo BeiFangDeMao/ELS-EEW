@@ -1,0 +1,30 @@
+# All paths are relative to the Light_model workspace.
+project: els_eew
+scaling_config: discussion/scaling_study/experiment_config.yaml
+reference_checkpoint: els_eew/outputs/experiment_20261012_223631_490021/CompactGRU_seed42/checkpoint_CompactGRU_20261012_235806/best_CompactGRU_20261012_235806.pth
+pure_checkpoint: els_eew/outputs/experiment_20261012_223631_490021/PureGRU_seed42/checkpoint_PureGRU_20261012_223634/best_PureGRU_20261012_223634.pth
+pure_run_config: els_eew/outputs/experiment_20261012_223631_490021/PureGRU_seed42/run_config.json
+pure_metrics: els_eew/outputs/experiment_20261012_223631_490021/PureGRU_seed42/checkpoint_PureGRU_20261012_223634/test_metrics_by_chunk.json
+results: discussion/ablation_study/results
+groups:
+  architecture: true
+  multitask: true
+  loss: true
+  cache: true
+# No PureGRU construction or training is permitted. No matched checkpoint found.
+parameter_matched_pure_policy: report_unavailable_do_not_train
+reuse_8k: true
+reuse_pure_gru: true
+uniform_time_weight: 0.85
+single_task_learn_own_q: true
+stability_windows:
+  early: [0, 5]
+  late: [10, 29.76]
+cache:
+  records: 8
+  warmup_records: 2
+  repeats: 5
+  threads: 1
+  local_recompute: true
+  end_to_end_preprocessing: false
+# First crossing / warning experiments and other model sizes are not run here.

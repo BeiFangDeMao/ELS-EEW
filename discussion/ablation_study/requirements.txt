@@ -1,0 +1,11 @@
+# Existing lightweight environment; no automatic package installation.
+torch
+numpy
+pandas
+h5py
+scipy
+scikit-learn
+matplotlib
+PyYAML
+tqdm
+pyarrow
