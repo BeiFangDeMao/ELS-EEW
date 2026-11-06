@@ -1,27 +1,24 @@
-# ELS-EEW / CompactGRU
+# ELS-EEW
 
-精简版：仅保留CompactGRU主训练链与discussion实验代码。
+ELS-EEW 是用于单台站地震预警的轻量化因果流式模型，代码中的模型名称为 `CompactGRU`。模型接收 100 Hz 三分量波形，每 32 个采样点更新一次，输出震级、震中距和反方位角的 sin/cos 分量。
 
-## 主训练
+## 项目结构
 
-在IDE运行 `els_eew/train_CompactGRU.py`。
-数据路径、训练参数、随机种子等在 `els_eew/experiment_config.py` 设置。
-批量入口默认也只训练CompactGRU，没有启动任何训练。
-主模型实现：`els_eew/models/compact_gru.py`。
-数据加载、预处理及损失：`els_eew/training/`。
-模型目录内其他实现是统一注册器或讨论实验依赖，不是默认训练任务。
-原目录名保留，以兼容discussion的相对路径。
+- `els_eew/`：ELS-EEW 模型、因果预处理、训练与测试。
+- `discussion/`：可靠性与预警评价、规模实验、消融、模型对比及真实事件回放。PureGRU 仅保留在消融目录。
+- `plotting/`：共享绘图样式。
 
-## 讨论实验
+## 使用
 
-- `discussion/early_reliability_warning`：早期可靠性和预警评价。
-- `discussion/scaling_study`：模型规模实验。
-- `discussion/ablation_study`：消融和缓存效率。
-- `discussion/model_comparison`：对比模型、CPU延迟和内存测试；upstream为第三方基线依赖。
-- `discussion/real_events`：真实事件回放。
-- `discussion/two_station_streaming_eew`：双台站方案文档。
+```bash
+pip install -r requirements.txt
+python els_eew/train_CompactGRU.py
+```
 
-`plotting`仅保留讨论实验需要的共享publication_style.py。
-H5、权重、预测结果、labels.npz和地图文件不在源码包中，需自行配置。
-部分讨论脚本仍引用原plotting位置的数据文件；删除了绘图工程，但不改变这些输入位置。
-第三方许可参见THIRD_PARTY_NOTICES.md。本次没有发布或上传GitHub。
+运行前在 `els_eew/experiment_config.py` 中设置 H5 数据路径、输出目录和训练参数。模型实现位于 `els_eew/models/compact_gru.py`，流式推理使用 `model.eval()` 和 `stream_step()`，将返回的状态传给下一次更新，新记录开始时重置状态。
+
+讨论实验分别使用各目录的 Python 或 `.bat` 入口，配置位于对应目录的 YAML、JSON 或 Python 文件中。数据集、权重和结果需自行放入配置指定的位置。
+
+## 许可与来源
+
+项目许可见 `LICENSE`。第三方对比代码位于 `discussion/model_comparison/upstream/`：SeisT 来自 https://github.com/senli1073/SeisT （MIT），E3WS 来自 https://github.com/PabloELara/E3WS （CC BY 4.0），各自许可文件予以保留。MagNet、BAZ-Network 等实现来源见上游代码与来源清单。

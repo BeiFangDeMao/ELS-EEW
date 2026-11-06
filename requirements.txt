@@ -1,5 +1,5 @@
-# Convenience dependencies for the core PyTorch experiments and plotting.
-# Not a lockfile; consult per-experiment requirements and upstream licenses.
+# Shared dependencies for ELS-EEW, discussion experiments and upstream tools.
+# Consolidated package list, not a verified environment lockfile.
 torch
 numpy
 scipy
@@ -14,4 +14,14 @@ psutil
 Pillow
 geographiclib
 openpyxl
-# Historical/third-party experiments can require additional dependencies.
+
+# Baseline models and upstream utilities
+GPUtil
+obspy
+onnx
+onnxruntime
+tensorboard
+tensorboard-data-server
+tensorboard-plugin-wit
+timm==0.9.2
+xlrd

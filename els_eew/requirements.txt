@@ -1,8 +1,0 @@
-torch
-numpy
-h5py
-scikit-learn
-matplotlib
-tqdm
-# 仅手动运行export_results_excel.py需要，默认训练不依赖它。
-openpyxl

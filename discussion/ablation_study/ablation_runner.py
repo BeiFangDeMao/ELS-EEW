@@ -96,7 +96,7 @@ def preflight(cfg,folder):
     pd.DataFrame(specs).to_csv(folder/'experiment_plan.csv',index=False)
     pd.DataFrame(resources).to_csv(folder/'model_resources.csv',index=False)
     atomic_json(folder/'reference_audit.json',audit)
-    sources=list(HERE.glob('*.py'))+[Path(cfg['project'])/p for p in ['models/compact_gru.py','models/pure_gru.py',
+    sources=list(HERE.glob('*.py'))+[Path(cfg['project'])/p for p in ['models/compact_gru.py',
         'models/common.py','models/students.py','training/Trainstudents.py','training/h5_loading.py']]
     sources+=[WORKSPACE/'discussion/scaling_study'/p for p in ['training_adapter.py','model_scaling.py','study.py']]
     hashes={str(path.relative_to(WORKSPACE)):sha256(path) for path in sources}

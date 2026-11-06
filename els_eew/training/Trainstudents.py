@@ -7,7 +7,7 @@
 - 学习率策略：CyclicLR（循环学习率）
 - 早停策略：三项指标至少两项突破历史最佳
 - 可视化：仅三张逐输出点测试误差曲线；不自动导出Excel或逐样本CSV
-用法: python Trainstudents.py --model_id S1 --train_h5 ...
+用法: python train_CompactGRU.py
 """
 
 import os
@@ -182,7 +182,7 @@ def require_finite(tensor, description):
 
 
 def train_one_epoch(model, loader, optimizer, scheduler, epoch, grad_clip=1.0,
-                    diagnostic_dir=None, model_id="S4_stream"):
+                    diagnostic_dir=None, model_id="CompactGRU"):
     model.train()
     total_loss = 0.0
     total_loss_mag = 0.0
@@ -411,16 +411,9 @@ def main(
     BATCH_SIZE, EPOCHS, EARLY_STOP_PATIENCE = batch_size, epochs, patience
     if min(batch_size, epochs, patience) < 1:
         raise ValueError("batch_size, epochs and patience must be positive")
-    if model_family == "explore":
-        from models.candidates import create_student_model as model_factory
-    elif model_family == "mlp":
-        from models.students_mlp import create_student_model as model_factory
-    elif model_family == "stream":
-        from models.students_streaming import create_student_model as model_factory
-    elif model_family == "cnn":
-        model_factory = create_student_model
-    else:
-        raise ValueError(f"Unknown model family: {model_family}")
+    if model_family not in ("explore", "cnn"):
+        raise ValueError("This project supports ELS-EEW / CompactGRU only")
+    from models.candidates import create_student_model as model_factory
     def set_deterministic(seed=42):
         import random
         random.seed(seed)
@@ -740,12 +733,10 @@ def main(
 
 def cli(model_family="cnn", exclude_200hz=False):
     from pathlib import Path
-    from models.students_mlp import MODEL_IDS as MLP_IDS
-    from models.students_streaming import MODEL_IDS as STREAM_IDS
     root = Path(__file__).resolve().parents[2]
-    model_ids = STREAM_IDS if model_family == "stream" else MLP_IDS if model_family == "mlp" else MODEL_IDS
+    model_ids = MODEL_IDS
     parser = argparse.ArgumentParser(description="多任务学生模型监督训练（无蒸馏）")
-    parser.add_argument("--model_id", type=str, default=model_ids[-1] if model_family == "stream" else "C4" if model_family == "mlp" else "S4",
+    parser.add_argument("--model_id", type=str, default="CompactGRU",
                         choices=model_ids,
                         help=f"学生模型ID，可选: {model_ids}")
     parser.add_argument("--train_h5", type=str,
@@ -766,8 +757,8 @@ def cli(model_family="cnn", exclude_200hz=False):
     parser.add_argument("--grad_clip", type=float, default=0.8,
                         help="全局梯度L2范数上限，必须为正数，默认0.8")
     parser.add_argument("--sequence_length", type=int,
-                        default=2976 if model_family == "stream" else 1024,
-                        help="输入采样点数，必须为32的倍数；流式S4默认2976")
+                        default=2976,
+                        help="输入采样点数，必须为32的倍数，默认2976")
     args = parser.parse_args()
     print(f"训练配置：family={model_family} model={args.model_id} "
           f"输入={args.sequence_length}点 输出={args.sequence_length // CHUNK_LEN}块 "

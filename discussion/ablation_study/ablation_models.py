@@ -2,7 +2,7 @@
 import torch
 from torch import nn
 from models.compact_gru import CompactGRU
-from models.pure_gru import PureGRU
+from pure_gru import PureGRU
 from training import Trainstudents as original
 
 Q={'magnitude':('log_sigma_mag',-1.),'distance':('log_sigma_dis',4.),'azimuth':('log_sigma_azi',-1.5)}
