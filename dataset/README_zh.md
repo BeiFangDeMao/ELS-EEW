@@ -141,15 +141,17 @@ K-NET/KiK-net原始波形属于NIED提供的第三方数据。NIED官方网站�
 NIED数据使用声明：https://www.kyoshin.bosai.go.jp/en/  
 NIED用户注册协议：https://hinetwww11.bosai.go.jp/nied/registration/
 
-## 6. 如何引用本索引归档和软件
+## 6. 如何引用本项目
 
-引用本研究的数据记录索引时，请使用该Zenodo数据集记录正式发布后获得的**Dataset DOI**。引用模型实现或数据重建脚本时，请使用相关ELS-EEW软件发布版本在Zenodo上对应的**特定版本Software DOI**。
+如使用本项目提供的数据目录、标签、源代码、预处理脚本或模型权重，请引用**本项目 DOI**。这些材料属于同一个 ELS-EEW 联合归档，使用同一个项目 DOI，不分别引用数据目录 DOI 和模型软件 DOI。
 
-这些归档引用与NIED原始数据引用是相互独立的，不能相互替代：
+使用 NIED 原始波形时，还应独立引用 NIED 原始数据集：
 
-- **原始地震观测数据：** NIED K-NET/KiK-net — https://doi.org/10.17598/NIED.0004
-- **研究使用的记录索引：** 引用本Zenodo数据索引记录发布后显示的DOI。
-- **研究软件：** 引用对应Zenodo软件归档记录中显示的特定版本DOI。
+> National Research Institute for Earth Science and Disaster Resilience. (2019). *NIED K-NET, KiK-net* [Dataset]. National Research Institute for Earth Science and Disaster Resilience. https://doi.org/10.17598/NIED.0004
+
+本项目 DOI 与 NIED 原始数据 DOI 对应不同资源，不能相互替代。
+
+本项目提供的四列目录包含记录名称、震级、震中距和反方位角标签，不包含人工 P 波到时标注。因果处理脚本假设输入波形已按 P 波对齐；精确重建论文中的输入窗口仍需要相应的到时标注。
 
 ## 7. 官方参考资源
 

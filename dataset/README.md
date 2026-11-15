@@ -140,15 +140,17 @@ The authors' record indices and reconstruction materials should be used only in 
 
 NIED's data-use notice is available at https://www.kyoshin.bosai.go.jp/en/ and its registration agreement at https://hinetwww11.bosai.go.jp/nied/registration/.
 
-## 6. Citation of this index archive and software
+## 6. Citing this project
 
-When citing the dataset indices, use the **dataset DOI assigned to this Zenodo record**, once published. When citing the model implementation or reconstruction scripts, use the **specific Zenodo software-version DOI** associated with the relevant ELS-EEW release.
+If you use the dataset catalogs, labels, source code, preprocessing scripts, or model weights provided by this project, please cite **this project's DOI**. These materials form a single ELS-EEW archive and share the same project DOI; separate dataset-catalog and model-software DOI citations are not required.
 
-These archival citations are separate from, and do not replace, the original NIED data citation:
+When using the original NIED waveforms, also cite the original NIED dataset independently:
 
-- **Original seismic data:** NIED K-NET/KiK-net — https://doi.org/10.17598/NIED.0004
-- **Study-specific record indices:** cite the DOI displayed on the published dataset-index record.
-- **Study software:** cite the version-specific DOI displayed on the relevant Zenodo software record.
+> National Research Institute for Earth Science and Disaster Resilience. (2019). *NIED K-NET, KiK-net* [Dataset]. National Research Institute for Earth Science and Disaster Resilience. https://doi.org/10.17598/NIED.0004
+
+The project DOI and the NIED dataset DOI identify different resources and do not replace one another.
+
+The four-column catalogs contain record identifiers, magnitude, epicentral distance, and back-azimuth labels, but not manually annotated P-wave arrival times. The causal processing script assumes P-aligned inputs; exact reconstruction of the study's input windows still requires the corresponding arrival annotations.
 
 ## 7. Official resources
 
