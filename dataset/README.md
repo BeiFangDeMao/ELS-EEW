@@ -96,20 +96,11 @@ For K-NET ASCII files, the waveform sample values are digital counts and the hea
 
 See the official [NIED FAQ](https://www.kyoshin.bosai.go.jp/en/faq/) for file components, formats, and scaling conventions.
 
-## 3. Using the archived record indices
+## 3. Using the record catalogs
 
-The record indices supplied in this archive identify the observations selected for the study. Use the **actual columns and identifiers present in the supplied index files**; the following are general matching concepts rather than a claim about any particular filename or schema:
+The UTF-8, tab-separated files `train_catalog.txt`, `validation_catalog.txt`, and `test_catalog.txt` define the training, validation, and test partitions. Each has a header and four columns: `data_name`, `magnitude`, `epicentral_distance_km`, and `back_azimuth_deg`. Preserve the supplied record identifiers, including the KiK-net `_U1` and `_U2` suffixes, when matching source files.
 
-- Earthquake/event identifier or event directory time;
-- Observation network (K-NET or KiK-net);
-- Station code and, where relevant, sensor installation level;
-- Recording time and/or the specific waveform file identifier;
-- Dataset assignment (training, validation, or test), if included;
-- P-wave arrival information and any study-specific selection metadata, if included.
-
-**Important:** NIED states that the origin-time seconds shown in some event metadata may be placeholders (such as `00` or `30`). Match records using the NIED event listing and station/file identifiers rather than assuming that these seconds represent a precise physical origin time. NIED does **not** provide P- and S-wave arrival picks in its waveform download service; any picks distributed in this archive are study-derived information, not official NIED picks.
-
-If a particular index row cannot be matched unambiguously to a NIED record, consult the accompanying dataset documentation rather than substituting a different event or station.
+The catalogs do not contain manually annotated P-wave arrival times. NIED waveform access does not provide the study's manual alignment annotations. If a record cannot be matched unambiguously, check its event, station, and component identifiers rather than substituting another observation.
 
 ## 4. Reconstructing the research dataset
 
@@ -117,7 +108,7 @@ After downloading the appropriate waveforms from NIED:
 
 1. **Preserve original files.** Keep the NIED-downloaded waveforms and their headers unchanged in a local, access-controlled directory.
 2. **Match records.** Use the archived indices to identify the corresponding events, stations, channels, and recording files.
-3. **Apply dataset construction.** Run the dataset-selection, unit-conversion, waveform-windowing, and preprocessing code supplied with the ELS-EEW project, using the configuration corresponding to the study.
+3. **Prepare and process inputs.** Obtain or independently determine P-wave alignment, convert the source records to the required units and sampling rate, and apply the supplied causal processing code with the study configuration. The processing script assumes inputs are already P-aligned; the catalogs alone cannot reproduce the exact manual alignment used in the study.
 4. **Apply the supplied partitions.** Reproduce the training, validation, and test assignments from the archived index information rather than generating a new random partition.
 5. **Verify outputs.** Compare record counts, sample identifiers, waveform lengths, and other documented checks against the dataset description in the associated research work.
 
@@ -125,7 +116,7 @@ The ELS-EEW source-code repository is:
 
 https://github.com/BeiFangDeMao/ELS-EEW
 
-For a research reproduction, use the **specific archived software release cited by the associated paper**, rather than assuming that the latest `main` branch reproduces historical experiments. Any additional dependencies or commands should be taken from the released source-code documentation; this README does not prescribe unverified script names or command-line arguments.
+GitHub provides the continuously maintained code. Formal software versions will be archived separately as described in Section 6; after publication, use the archived version cited by the paper for reproduction. The latest GitHub branch may differ from that version.
 
 ## 5. Data access, ownership, and redistribution
 
@@ -140,17 +131,22 @@ The authors' record indices and reconstruction materials should be used only in 
 
 NIED's data-use notice is available at https://www.kyoshin.bosai.go.jp/en/ and its registration agreement at https://hinetwww11.bosai.go.jp/nied/registration/.
 
-## 6. Citing this project
+## 6. Zenodo archiving and citation
 
-If you use the dataset catalogs, labels, source code, preprocessing scripts, or model weights provided by this project, please cite **this project's DOI**. These materials form a single ELS-EEW archive and share the same project DOI; separate dataset-catalog and model-software DOI citations are not required.
+GitHub remains the [public development and maintenance platform](https://github.com/BeiFangDeMao/ELS-EEW). Formal research materials will be uploaded **manually through the Zenodo website**, not archived automatically through GitHub Releases.
 
-When using the original NIED waveforms, also cite the original NIED dataset independently:
+Two independent Zenodo records are planned:
 
-> National Research Institute for Earth Science and Disaster Resilience. (2019). *NIED K-NET, KiK-net* [Dataset]. National Research Institute for Earth Science and Disaster Resilience. https://doi.org/10.17598/NIED.0004
+| Record type | Planned contents | Citation scope |
+| --- | --- | --- |
+| Software | ELS-EEW model code, training and inference programs, data-processing code, and necessary configurations | Model implementation and computational procedures |
+| Dataset | The three record catalogs and target labels, dataset partitions, and data-acquisition documentation; additional research data only if authorized and explicitly listed | Study record selection, labels, and partitions |
 
-The project DOI and the NIED dataset DOI identify different resources and do not replace one another.
+The records will use **separate Software and Dataset DOIs**. Neither record has been published yet; the corresponding Zenodo DOI will be provided after publication. No provisional DOI is supplied here. Cite each published record using its own metadata and include [Software] or [Dataset], as appropriate, in the reference-list entry.
 
-The four-column catalogs contain record identifiers, magnitude, epicentral distance, and back-azimuth labels, but not manually annotated P-wave arrival times. The causal processing script assumes P-aligned inputs; exact reconstruction of the study's input windows still requires the corresponding arrival annotations.
+Neither record will contain original or processed NIED waveform files. The Dataset description does not imply release of the private P-wave arrival annotations. Exact reconstruction of the study's manually aligned windows still requires those annotations; independent picks may produce different windows.
+
+The NIED DOI, https://doi.org/10.17598/NIED.0004, identifies the original observations and remains a separate required citation. Neither ELS-EEW archival DOI replaces it. Archiving does not change the software license or confer additional rights to redistribute NIED data.
 
 ## 7. Official resources
 

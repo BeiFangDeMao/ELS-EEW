@@ -22,3 +22,20 @@ python els_eew/train_CompactGRU.py
 ## 许可与来源
 
 项目许可见 `LICENSE`。第三方对比代码位于 `discussion/model_comparison/upstream/`：SeisT 来自 https://github.com/senli1073/SeisT （MIT），E3WS 来自 https://github.com/PabloELara/E3WS （CC BY 4.0），各自许可文件予以保留。MagNet、BAZ-Network 等实现来源见上游代码与来源清单。
+
+## Research availability and archival citation
+
+[GitHub](https://github.com/BeiFangDeMao/ELS-EEW) is the public platform for ongoing development and maintenance. Zenodo will preserve formal research versions through **manual file uploads on the Zenodo website**, not automatic archiving of GitHub Releases.
+
+Two independent Zenodo records are planned:
+
+- **Software:** the ELS-EEW model implementation, training and inference programs, data-processing code, and necessary configurations.
+- **Dataset:** the study's record catalogs, target labels, training/validation/test assignments, and data-acquisition documentation. Any additional research data will be included only when authorized for public release and explicitly listed in the record.
+
+Each record will have its own DOI. Neither record has been published yet; the corresponding Zenodo DOI will be provided after publication. Cite the Software record for the implementation and the Dataset record for the catalogs and partitions. Use the citation metadata of the published records, including [Software] or [Dataset] in reference-list entries as appropriate. For research reproduction, use the formal archived version cited by the paper rather than assuming that the latest GitHub branch reproduces earlier experiments.
+
+Original NIED K-NET/KiK-net waveforms are not redistributed in this repository and will not be included in either Zenodo record. Obtain them directly from NIED and comply with its access and data-use conditions. Cite the original observations independently:
+
+> National Research Institute for Earth Science and Disaster Resilience. (2019). *NIED K-NET, KiK-net* [Dataset]. National Research Institute for Earth Science and Disaster Resilience. https://doi.org/10.17598/NIED.0004
+
+See [the data-acquisition guide](dataset/README.md) for record catalogs, acquisition steps, and the limits of reconstructing P-aligned inputs. Archival descriptions do not change the software license or grant additional rights over third-party data.
