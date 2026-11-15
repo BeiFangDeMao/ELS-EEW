@@ -165,3 +165,5 @@ The four-column catalogs contain record identifiers, magnitude, epicentral dista
 ---
 
 **Scope note:** This README documents how to access NIED source observations and how the publicly released study materials are intended to support dataset reconstruction. It does not imply that the third-party waveform files themselves are openly redistributable, or that any index entry can be retrieved without complying with NIED's access conditions.
+
+Dataset catalogs are UTF-8 TXT files with a header and four tab-separated columns.
